@@ -1,7 +1,9 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import AppHome from './pages/AppHome.vue';
+</script>
 
 <template>
-  <h1>Hello world</h1>
+  <AppHome />
 </template>
 
 <style scoped></style>
