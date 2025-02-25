@@ -5,7 +5,14 @@ const { src, width, height, alt = 'Avatar' } = defineProps<Props>();
 </script>
 
 <template>
-  <div><img :src="src" :alt="alt" :style="{ width: width, height: height }" /></div>
+  <div><img class="avatar" :src="src" :alt="alt" :style="{ width: width, height: height }" /></div>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.avatar {
+  padding: 13px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+</style>

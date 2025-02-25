@@ -5,19 +5,28 @@ import UiContainer from '@/shared/ui/UiContainer.vue';
 import UiTypography from '@/shared/ui/UiTypography.vue';
 import ChatBubble from '@/widgets/ChatBubble.vue';
 import ChatWindow from '@/widgets/ChatWindow.vue';
+import MessageCard from '@/widgets/MessageCard.vue';
+import UiInput from '@/shared/ui/UiInput.vue';
+
+const onChange = (value: string) => {
+  console.log(value);
+};
+const onSubmit = () => {
+  console.log('Send');
+};
 </script>
 
 <template>
   <div class="homepage">
     <UiContainer>
-      <UiTypography class="tag__h1" tag-name="h1" size="l">Live chat</UiTypography>
+      <UiTypography class="tag__h1" tag-name="h1" size="l" weight="bold">Live chat</UiTypography>
       <ChatWindow class="chat">
         <div class="left">
           <ChatBubble>
             <template v-slot:left>
-              <UiAvatar src="@/assets/images/boy-1.png" alt="Girl" />
+              <UiAvatar src="../assets/images/boy-1.png" alt="Girl" />
               <UiBubble>
-                <UiTypography class="tag__p" size="m">Hello</UiTypography>
+                <UiTypography class="tag__p" size="m" weight="bold">Hello</UiTypography>
               </UiBubble>
             </template>
           </ChatBubble>
@@ -25,14 +34,21 @@ import ChatWindow from '@/widgets/ChatWindow.vue';
         <div class="right">
           <ChatBubble is-side>
             <template v-slot:right>
-              <UiAvatar src="@/assets/images/boy-1.png" alt="Girl" />
+              <UiAvatar src="../assets/images/boy-1.png" alt="Girl" />
               <UiBubble>
-                <UiTypography class="tag__p" size="m">Hello</UiTypography>
+                <UiTypography class="tag__p" size="m" weight="bold">Hello</UiTypography>
               </UiBubble>
             </template>
           </ChatBubble>
         </div>
       </ChatWindow>
+      <div class="message">
+        <MessageCard>
+          <template v-slot:input>
+            <UiInput :onChange="onChange" :onSubmit="onSubmit" />
+          </template>
+        </MessageCard>
+      </div>
     </UiContainer>
   </div>
 </template>
@@ -44,7 +60,8 @@ import ChatWindow from '@/widgets/ChatWindow.vue';
 
 .chat {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto;
   align-items: flex-end;
 }
 

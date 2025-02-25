@@ -13,16 +13,16 @@ defineProps<{ isSide?: boolean }>();
 .chat__bubble {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 21px;
+  padding: 10px 10px;
 }
 
 .right {
   flex-direction: row-reverse;
-  text-align: right;
+  align-self: flex-end;
 }
 
 .left {
-  flex-direction: row;
-  text-align: left;
+  align-self: flex-start;
 }
 </style>

@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import type { Props } from '../types/typography';
 
-const { size = 'm', tagName = 'p' } = defineProps<Props>();
+const { size = 'm', tagName = 'p', weight = 'normal' } = defineProps<Props>();
 </script>
 
 <template>
-  <component :is="tagName" :class="['typography', `text-${size}`, `tag__${tagName}`]"
+  <component
+    :is="tagName"
+    :class="['typography', `text-${size}`, `tag__${tagName}`, `weight-${weight}`]"
     ><slot></slot
   ></component>
 </template>
@@ -19,5 +21,13 @@ const { size = 'm', tagName = 'p' } = defineProps<Props>();
 .tag__p {
   font-size: 14px;
   color: #000000;
+}
+
+.typography.weight-normarl {
+  font-weight: normal;
+}
+
+.typography.weight-bold {
+  font-weight: bold;
 }
 </style>
