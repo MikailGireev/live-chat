@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import AppHome from './pages/AppHome.vue';
+import AppHome from '@/pages/AppHome.vue';
 </script>
 
 <template>

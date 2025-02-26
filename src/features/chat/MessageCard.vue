@@ -2,8 +2,7 @@
 
 <template>
   <div class="message__card">
-    <slot name="input"></slot>
-    <slot name="button"></slot>
+    <slot></slot>
   </div>
 </template>
 
