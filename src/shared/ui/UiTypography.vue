@@ -15,7 +15,6 @@ const { size = 'm', tagName = 'p', weight = 'normal', color = 'white' } = define
 <style scoped lang="scss">
 .tag__h1 {
   font-size: 32px;
-  color: #06c1ab;
 }
 
 .tag__p {
@@ -37,5 +36,9 @@ const { size = 'm', tagName = 'p', weight = 'normal', color = 'white' } = define
 
 .typography.black {
   color: #000000;
+}
+
+.typography.green {
+  color: #06c1ab;
 }
 </style>
